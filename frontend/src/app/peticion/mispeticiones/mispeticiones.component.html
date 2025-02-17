@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Mis Peticiones</h2>
+
+  <!-- Si no hay peticiones -->
+  <div *ngIf="misPeticiones && misPeticiones.length === 0">
+    <p>No hay ninguna petición.</p>
+    <button class="btn btn-primary" (click)="goToCreate()">Crear Petición</button>
+  </div>
+
+  <!-- Si hay peticiones, se muestra la tabla -->
+  <table *ngIf="misPeticiones && misPeticiones.length > 0" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of misPeticiones">
+        <td>{{ pet.id }}</td>
+        <td>{{ pet.titulo }}</td>
+        <td>{{ pet.descripcion }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="editPeticion(pet.id!)">Editar</button>
+          <button class="btn btn-danger btn-sm" (click)="deletePeticion(pet.id!)">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error | json }}
+  </div>
+</div>

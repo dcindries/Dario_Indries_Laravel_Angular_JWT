@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        Detalles de la Petición
+      </div>
+      <div class="card-body" *ngIf="peticion">
+        <p><strong>Título:</strong> {{ peticion.titulo }}</p>
+        <p><strong>Descripción:</strong> {{ peticion.descripcion }}</p>
+        <p><strong>Destinatario:</strong> {{ peticion.destinatario }}</p>
+        <p><strong>Categoría:</strong> {{ peticion.categoria_id }}</p>
+        <!-- Agrega otros campos que necesites mostrar -->
+        <button class="btn btn-danger mt-3" (click)="deletePeticion()">Eliminar Petición</button>
+      </div>
+      <div *ngIf="error" class="alert alert-danger">
+        {{ error | json }}
+      </div>
+    </div>
+  </div>
+  

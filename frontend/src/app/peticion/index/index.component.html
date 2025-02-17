@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Listado de Peticiones</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pet of peticiones">
+          <td>{{ pet.id }}</td>
+          <td>{{ pet.titulo }}</td>
+          <td>{{ pet.descripcion }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

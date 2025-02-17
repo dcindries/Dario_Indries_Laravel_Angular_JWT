@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Edit Petición</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Título</label>
+        <input type="text" class="form-control" formControlName="titulo">
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea class="form-control" formControlName="descripcion"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Destinatario</label>
+        <input type="text" class="form-control" formControlName="destinatario">
+      </div>
+      <div class="form-group">
+        <label>Categoría ID</label>
+        <input type="number" class="form-control" formControlName="categoria_id">
+      </div>
+      <div *ngIf="errors" class="alert alert-danger mt-3">
+        {{ errors | json }}
+      </div>
+      <button type="submit" class="btn btn-primary">Update Petición</button>
+    </form>
+  </div>
+  
